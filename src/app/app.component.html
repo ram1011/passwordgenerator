@@ -1,25 +1,56 @@
-<h2>Password generator</h2>
-<div>
-  <label> Enter length</label>
-  <input type="text" (input)="onchangelength($event.target.value)" />
-</div>
-<div>
-  <label>Use Letters</label>
-  <input type="checkbox" name="useletters" (change)="useletters()"/>
-</div>
-<div>
-  <label>Use Numbers</label>
-  <input type="checkbox" (change)="usenumbers()"/>
-</div>
-<div>
-  <label>Use Symbols</label>
-  <input type="checkbox" (change)="usesymbols()"/>
-</div>
-<div>
-  <!-- event binding synatx (click)="onButtonClick()"-->
-  <button type="button" (click)="onButtonClick()" [disabled]="!(passwordlength && (includeletters || includenumbers || includesymbols))">Generate</button>
-</div>
-<div>
-  <label for=""> Generated Password</label>
-  <input type="text"[value]="password"/>
+<div class="container">
+  <div class="columns is-mobile">
+
+    <div class="column is-half is-offset-one-quarter">
+      <div class="box">
+        <p>Use this tool to Generate your own passwords</p>
+      </div>
+      <div class="box">
+        <h2 class="title">Password Genrator</h2>
+      </div>
+      <div class="field">
+        <label class="label">Enter Password Length </label>
+        <div class="control">
+          <input class="input" type="text" placeholder="ex:9" (input)="onchangelength($event.target.value)">
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input type="checkbox" (change)="useletters()" />
+            Use Letters
+          </label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input type="checkbox" (change)="usenumbers()" />
+            Use Numbers
+          </label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input type="checkbox" (change)="usesymbols()" />
+            Use Symbols
+          </label>
+        </div>
+      </div>
+      <div class="field ">
+        <div class="control">
+          <button class="button is-primary is-medium is-fullwidth" (click)="onButtonClick()"
+            [disabled]="!(passwordlength && (includeletters || includenumbers || includesymbols))">Generate
+          </button>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Generated Password</label>
+        <div class="control">
+          <textarea class="textarea" placeholder="Generated Password" rows="2" [value]="password"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
