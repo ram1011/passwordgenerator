@@ -1,21 +1,21 @@
 <div class="container has-background-primary-light pt-5">
-  <div class="columns is-mobile">
+  <div class="columns">
 
-    <div class="column is-half is-offset-one-quarter">
-      <div class="box title bg-green">
-        <p class="has-text-white">Keyutech hackathon 2021</p>
+    <div class="column is-half is-offset-one-quarter is-desktop">
+      <div class="box title bg-green mx-3 is-mobile">
+        <p class="has-text-white is-capitalized">Keyutech hackathon 2021</p>
       </div>
-      <div class="box">
+      <div class="box mx-3 is-mobile">
         <h2 class="title">Password Generator</h2>
         <p><small>Use our <i>password generator</i> tool to generate a secure and strong password.</small></p>
       </div>
-      <div class="field">
+      <div class="field mx-3 is-mobile">
         <label class="label">Enter Password Length </label>
         <div class="control">
           <input class="input" type="text" placeholder="ex:9" (input)="onchangelength($event.target.value)">
         </div>
       </div>
-      <div class="field">
+      <div class="field mx-3 is-mobile">
         <div class="control">
           <label class="checkbox">
             <input type="checkbox" (change)="useletters()" />
@@ -23,7 +23,7 @@
           </label>
         </div>
       </div>
-      <div class="field">
+      <div class="field mx-3 is-mobile">
         <div class="control">
           <label class="checkbox">
             <input type="checkbox" (change)="usenumbers()" />
@@ -31,7 +31,7 @@
           </label>
         </div>
       </div>
-      <div class="field">
+      <div class="field mx-3 is-mobile">
         <div class="control">
           <label class="checkbox">
             <input type="checkbox" (change)="usesymbols()" />
@@ -39,14 +39,14 @@
           </label>
         </div>
       </div>
-      <div class="field ">
+      <div class="field mx-3 is-mobile">
         <div class="control">
           <button class="button is-primary is-medium is-fullwidth" (click)="onButtonClick()"
             [disabled]="!(passwordlength && (includeletters || includenumbers || includesymbols))">Generate
           </button>
         </div>
       </div>
-      <div class="field" *ngIf="password!== ''">
+      <div class="field mx-3 is-mobile" *ngIf="password!== ''">
         <label class="label">Generated Password</label>
         <div class="control">
           <textarea class="textarea" placeholder="Generated Password" rows="2" [value]="password"></textarea>
